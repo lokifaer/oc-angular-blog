@@ -26,6 +26,10 @@ export class PostComponent implements OnInit {
 		else
 			return "regular";
   }
+  getNbLikes()
+  {
+	  return this.loveIts;
+  }
 
   onJaime()
   {

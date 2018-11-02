@@ -5,11 +5,13 @@
 	<!-- <div style="background-color:red;width:20px;height:20px"
 		*ngIf="getStatus() === 'éteint'"></div> -->
 	<h4>{{ title }}
-		<div style="float:right"><small><i>{{ createdAt | date:"EEEE d MMMM yyyy 'à' HH:mm:ss"}}</i></small></div>
+		<div style="float:right"><small><small><i>{{ createdAt | date:"dd/MM/yyyy 'à' HH:mm:ss"}}</i></small></small></div>
 	</h4>
 	<p>{{ content }}</p>
 	<button class="btn btn-success"
 		(click)="onJaime()">J'aime</button>&nbsp;
 	<button class="btn btn-danger"
 		(click)="onJaimePas()">Je n'aime pas</button>
+		<div style="float:right" *ngIf="getNbLikes() > 0"><img style="width:16px;height:16px" src="assets/thumbup.png"/>&nbsp;{{ getNbLikes() }}</div>
+		<div style="float:right" *ngIf="getNbLikes() < 0"><img style="width:16px;height:16px" src="assets/thumbdown.png"/>&nbsp;{{ getNbLikes() }}</div>
 </li>
